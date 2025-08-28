@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Test Ogłoszeń</title>
+		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+	</head>
+	<body>
+		<header>
+			<h1>Ogłoszenia Parafialne</h1>
+		</header>
+
+		<main>
+			<section class="announcements">
+				{% for announcement in announcements %}
+				<div class="announcement-card">
+					<h2>{{ announcement.title }}</h2>
+					<p>{{ announcement.content }}</p>
+					<span class="date">{{ announcement.date }}</span>
+				</div>
+				{% empty %}
+				<p>Brak ogłoszeń.</p>
+				{% endfor %}
+			</section>
+		</main>
+	</body>
+</html>
