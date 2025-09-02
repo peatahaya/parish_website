@@ -5,5 +5,5 @@ from django.urls import path, include
 from django.contrib import admin
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.test_page, name='test_page'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

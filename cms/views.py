@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import News, Announcement
+from .models import Announcement
 
-def index(request):
-    news_list = News.objects.all()
-    announcements = Announcement.objects.all()
-    return render(request, 'cms/index.html', {'news_list': news_list, 'announcements': announcements})
+def test_page(request):
+    # Pobranie wszystkich ogłoszeń z bazy, posortowanych malejąco po dacie
+    announcements = Announcement.objects.all().order_by('-date')
+    return render(request, "test_page.html", {"announcements": announcements})

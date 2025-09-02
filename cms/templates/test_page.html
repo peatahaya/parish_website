@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pl">
 	<head>
@@ -15,7 +16,7 @@
 				{% for announcement in announcements %}
 				<div class="announcement-card">
 					<h2>{{ announcement.title }}</h2>
-					<p>{{ announcement.content }}</p>
+					<p>{{ announcement.content|linebreaksbr }}</p>
 					<span class="date">{{ announcement.date }}</span>
 				</div>
 				{% empty %}
